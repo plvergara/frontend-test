@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Film from './Film'
+import GenreFilter from './GenreFilter'
 
 class ListFilm extends Component {
     render() {
         return (
             <div>
+                <GenreFilter />
                 <h1>Films</h1>
                 <table className="film-table">
                     <thead>

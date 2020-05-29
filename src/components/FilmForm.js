@@ -10,7 +10,8 @@ class FilmForm extends Component {
             title,
             genres: [...new Set(genres)],//Set  automatically remove duplicates items
             editing: false,
-            watched: false
+            watched: false,
+            hidden: false
         }
         this.props.dispatch({
             type: 'ADD_FILM',
@@ -33,7 +34,7 @@ class FilmForm extends Component {
                         type="text"
                         ref={(input) => this.getGenre = input}
                         placeholder="Enter Genre" /><br /><br />
-                    <button>Add film</button>
+                    <button>Submit</button>
                 </form>
             </div>
         )
