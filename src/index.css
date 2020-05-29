@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.film-table td,
+.film-table th {
+  text-align: center;
+  margin: 0;
+}
+.title,
+.item-title {
+  min-width: 10rem;
+  width: auto;
+}
+.genres,
+.item-genres {
+  min-width: 10rem;
+  width: auto;
+}
+.item {
+  background-color: bisque;
+}
+.genre {
+  margin: 0.5rem 2rem;
+  background-color: red;
+}

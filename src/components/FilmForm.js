@@ -4,11 +4,11 @@ class FilmForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const title = this.getTitle.value
-        const genres = [...this.getGenre.value]
+        const genres = this.getGenre.value.toLowerCase().split(' ')
         const data = {
             id: new Date(),
             title,
-            genres: genres,
+            genres: [...new Set(genres)],//Set  automatically remove duplicates items
             editing: false
         }
         this.props.dispatch({
