@@ -3,7 +3,9 @@ const filmReducer = (state = [], action) => {
         case 'ADD_FILM':
             return state.concat([action.data])
         case 'DELETE_FILM':
-            return state.filter(post => post.id !== action.id)
+            return state.filter(film => film.id !== action.id)
+        case 'WATCHED_FILM':
+            return state.map(film => film.id === action.id ? { ...film, watched: !film.watched } : film)
         default:
             return state
     }

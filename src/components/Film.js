@@ -6,7 +6,18 @@ class Film extends Component {
 
         return (
             <tr className="item">
-                <td><input type="checkbox" /></td>
+                <td>
+                    <form>
+                        <input type="checkbox"
+                            checked={this.props.film.watched}
+                            onClick={() =>
+                                this.props.dispatch({
+                                    type: 'WATCHED_FILM',
+                                    id: this.props.film.id
+                                })}
+                        />
+                    </form>
+                </td>
                 <td className="item-title">{this.props.film.title}</td>
                 <td className="item-genres">{this.props.film.genres.map((genre, i = 0) => (
                     <p key={i++} className="genre" > {genre}</p>

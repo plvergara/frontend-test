@@ -17,9 +17,10 @@ class ListFilm extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.films.map(film => (
-                            <Film key={film.id} film={film} />
-                        ))}
+                        {/* First show  not watched film*/}
+                        {this.props.films.map((film, i = 0) => !film.watched ? <Film key={film.id} film={film} /> : <tr key={i++} className="hidden"></tr>)}
+                        {/* Now show  watched film*/}
+                        {this.props.films.map((film, i = 0) => film.watched ? <Film key={film.id} film={film} /> : <tr key={i++} className="hidden"></tr>)}
                     </tbody>
                 </table>
             </div>

@@ -9,7 +9,8 @@ class FilmForm extends Component {
             id: new Date(),
             title,
             genres: [...new Set(genres)],//Set  automatically remove duplicates items
-            editing: false
+            editing: false,
+            watched: false
         }
         this.props.dispatch({
             type: 'ADD_FILM',
